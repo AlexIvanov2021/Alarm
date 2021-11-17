@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
                 Date date = new Date();
                 SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm");
                 textViewTime.setText(""+simpleDateFormat.format(date));
-                alarmTime("16:49");
+                alarmTime("17:09");
                 handler.postDelayed(this,1000);
             }
 
@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
     private void alarmTime(String timeAlarm) {
         if(textViewTime.getText().toString().equals(timeAlarm)&&logicAlarm){
             AlarmFragment alarmFragment = new AlarmFragment();
+            logicAlarm = false;
             alarmFragment.show(getSupportFragmentManager(),"show");
     }
 }
